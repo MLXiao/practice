@@ -1,0 +1,13 @@
+{
+	"name": "practice",
+	"version": "0.0.1",
+	"dependencies": {
+		"jquery": "latest",
+		"requirejs": "latest",
+		"angularjs": "latest",
+		"angular-ui-router": "latest",
+		"react": "latest",
+		"bootstrap": "latest"
+	},
+	"private": true
+}
