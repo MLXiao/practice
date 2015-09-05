@@ -11,12 +11,19 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'd34894821d46004529830749a7b6ae29',
             'enableCsrfValidation' => false,
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+                'text/json' => 'yii\web\JsonParser',
+            ],
+        ],
+        'response' => [
+            'format' => 'json'
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\defaults\User',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -38,7 +45,19 @@ $config = [
                 ],
             ],
         ],
-        'db' => require(__DIR__ . '/db.php'),
+        'mongodb' => require(__DIR__ . '/db.php'),
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            // 'enableStrictParsing' => true,
+            'showScriptName' => false,
+            'rules' => [
+                'GET <controller:\w+>/<id:\d+>' => '<controller>/get'
+            ],
+        ],
+    ],
+    'controllerMap' => [
+        'site' => 'app\controllers\defaults\SiteController',
+        'test' => 'app\controllers\defaults\TestController',
     ],
     'params' => $params,
 ];
