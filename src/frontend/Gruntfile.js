@@ -26,15 +26,6 @@ module.exports = function(grunt) {
     //   }
     // }
     cssmin: {
-      options: {
-        shorthandCompacting: false,
-        roundingPrecision: -1
-      },
-      target: {
-        files: {
-          'output.css': ['foo.css', 'bar.css']
-        }
-      },
       target: {
         files: [{
           expand: true,
@@ -44,14 +35,20 @@ module.exports = function(grunt) {
           ext: '.min.css'
         }]
       }
-    }
+    },
+
+    watch: {
+      css: {
+        files: ['./sass/**/*.scss'],
+        tasks: ['sass', 'concat', 'cssmin']
+      }
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['sass', 'concat', 'cssmin']);
-
-
+  grunt.registerTask('default', ['watch']);
 };
