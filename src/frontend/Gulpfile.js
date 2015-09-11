@@ -1,12 +1,20 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var autoprefixer = require('gulp-autoprefixer');
+var minifyCss = require('gulp-minify-css');
+var rename = require("gulp-rename");
 
-gulp.task('sass', function () {
-  gulp.src('./sass/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./css/source'));
+gulp.task('css', function() {
+	return gulp.src('./sass/**/*.scss')
+	  .pipe(sass().on('error', sass.logError))
+	  .pipe(concat('app.css'))
+	  .pipe(autoprefixer())
+	  .pipe(minifyCss())
+	  .pipe(rename({suffix: ".min"}))
+	  .pipe(gulp.dest('./css'));
 });
 
-gulp.task('sass:watch', function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
+gulp.task('default', function () {
+  gulp.watch('./sass/**/*.scss', ['css']);
 });
