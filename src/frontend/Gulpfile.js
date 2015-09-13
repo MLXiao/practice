@@ -8,8 +8,8 @@ var rename = require("gulp-rename");
 gulp.task('css', function() {
 	return gulp.src('./sass/**/*.scss')
 	  .pipe(sass().on('error', sass.logError))
-	  .pipe(concat('app.css'))
-	  .pipe(autoprefixer())
+	  .pipe(autoprefixer(['last 2 versions']))
+    .pipe(concat('app.css'))
 	  .pipe(minifyCss())
 	  .pipe(rename({suffix: ".min"}))
 	  .pipe(gulp.dest('./css'));

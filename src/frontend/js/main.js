@@ -8,13 +8,10 @@ require.config({
 		'angular-ui-router': '../lib/angular-ui-router/release/angular-ui-router.min',
 		'angular-translate': '../lib/angular-translate/angular-translate.min',
 	},
-	deps: ['bootstrap'],
+	deps: ['jquery', 'bootstrap'],
 	shim: {
+		'bootstrap': ['jquery'],
 		'angular-ui-router': ['angular'],
 		'angular-translate': ['angular'],
 	},
-});
-
-require(['jquery'], function($) {
-	console.log($().jquery);
 });
