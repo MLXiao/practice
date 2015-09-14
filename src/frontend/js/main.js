@@ -1,17 +1,32 @@
 require.config({
-	baseUrl: '/js',
+	baseUrl: './js',
 	urlArgs: "bust=" + (new Date()).getTime(), //Disabled cache, for debug
 	paths: {
 		'jquery': '../lib/jquery/dist/jquery.min',
-		'bootstrap': '../lib/bootstrap/dist/js/bootstrap.min',
+		'bootstrap-js': '../lib/bootstrap/dist/js/bootstrap.min',
+		'bootstrap': 'bootstrap',
+		'app': 'app',
 		'angular': '../lib/angular/angular.min',
 		'angular-ui-router': '../lib/angular-ui-router/release/angular-ui-router.min',
 		'angular-translate': '../lib/angular-translate/angular-translate.min',
 	},
-	deps: ['jquery', 'bootstrap'],
+	deps: ['jquery', 'angular', 'bootstrap'],
 	shim: {
-		'bootstrap': ['jquery'],
-		'angular-ui-router': ['angular'],
-		'angular-translate': ['angular'],
+		'bootstrap-js': {
+			deps: ['jquery'],
+			exports: 'bootstrap-js',
+		},
+		'angular': {
+			deps: ['jquery'],
+			exports: 'angular',
+		},
+		'angular-ui-router': {
+			deps: ['angular'],
+			exports: 'angular-ui-router',
+		},
+		'angular-translate': {
+			deps: ['angular'],
+			exports: 'angular-translate',
+		},
 	},
 });
