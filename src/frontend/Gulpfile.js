@@ -16,13 +16,14 @@ gulp.task('css', function() {
 	    .pipe(gulp.dest('./css'));
 });
 
-// gulp.task('js', function () {
-//     return gulp.src('./js/*.js')
-//         .pipe(amdOptimize('main'))
-//         .pipe(concat('main-bundle.js'))
-//         .pipe(gulp.dest('./js/dist'));
-// });
+gulp.task('js', function () {
+    return gulp.src('./js/**/*.js')
+        .pipe(amdOptimize('bootstrap'))
+        .pipe(concat('main-bundle.js'))
+        .pipe(gulp.dest('./js/build'));
+});
 
 gulp.task('default', function () {
+  gulp.watch('./js/**/*.js', ['js']);
   gulp.watch('./sass/**/*.scss', ['css']);
 });

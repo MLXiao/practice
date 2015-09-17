@@ -1,3 +1,3 @@
-define(['angular', 'app'], function() {
+define(['router'], function() {
     angular.bootstrap(document, ['app']);
 });

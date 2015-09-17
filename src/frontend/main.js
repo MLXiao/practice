@@ -7,9 +7,13 @@ require.config({
 		'angular': '../lib/angular/angular.min',
 		'angular-ui-router': '../lib/angular-ui-router/release/angular-ui-router.min',
 		'angular-translate': '../lib/angular-translate/angular-translate.min',
+		'main-bundle': 'build/main-bundle'
 	},
-	deps: ['bootstrap'],
+	// deps: ['bootstrap'],
+	deps: ['main-bundle'],
 	shim: {
+		'main-bundle': ['angular', 'angular-ui-router'],
+		'bootstrap': ['angular', 'angular-ui-router'],
 		'bootstrap-js': {
 			deps: ['jquery'],
 			exports: 'bootstrap-js',
@@ -28,3 +32,5 @@ require.config({
 		},
 	},
 });
+
+require(['bootstrap'], function() {})
