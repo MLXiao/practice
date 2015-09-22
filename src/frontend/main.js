@@ -7,30 +7,15 @@ require.config({
 		'angular': '../lib/angular/angular.min',
 		'angular-ui-router': '../lib/angular-ui-router/release/angular-ui-router.min',
 		'angular-translate': '../lib/angular-translate/angular-translate.min',
-		'main-bundle': 'build/main-bundle'
+		'angular-couch-potato': '../lib/angular-couch-potato/dist/angular-couch-potato',
 	},
-	// deps: ['bootstrap'],
-	deps: ['main-bundle'],
+	deps: ['bootstrap'],
 	shim: {
-		'main-bundle': ['angular', 'angular-ui-router'],
 		'bootstrap': ['angular', 'angular-ui-router'],
-		'bootstrap-js': {
-			deps: ['jquery'],
-			exports: 'bootstrap-js',
-		},
-		'angular': {
-			deps: ['jquery'],
-			exports: 'angular',
-		},
-		'angular-ui-router': {
-			deps: ['angular'],
-			exports: 'angular-ui-router',
-		},
-		'angular-translate': {
-			deps: ['angular'],
-			exports: 'angular-translate',
-		},
+		'bootstrap-js': ['jquery'],
+		'angular': ['jquery'],
+		'angular-ui-router': ['angular'],
+		'angular-translate': ['angular'],
+		'angular-couch-potato': ['angular'],
 	},
 });
-
-require(['bootstrap'], function() {})

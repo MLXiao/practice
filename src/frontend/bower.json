@@ -6,6 +6,7 @@
 		"requirejs": "*",
 		"angularjs": "*",
 		"angular-ui-router": "*",
+		"angular-couch-potato": "*",
 		"angular-translate": "*",
 		"ng-file-upload": "*",
 		"react": "*",
