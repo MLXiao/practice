@@ -1,0 +1,3 @@
+define([
+	'directive/pagination'
+], function() {});

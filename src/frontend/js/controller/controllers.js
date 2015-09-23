@@ -1,3 +1,4 @@
 define([
-	'controller/homepageCtrl'
-], function() {})
+	'controller/homepageController',
+	'controller/loginController'
+], function() {});
