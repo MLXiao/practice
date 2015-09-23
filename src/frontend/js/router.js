@@ -1,4 +1,4 @@
-define(['app', 'service/services', 'directive/directives', 'controller/controllers'], function(app) {
+define(['app', 'service/services', 'filter/filters', 'directive/directives', 'controller/controllers'], function(app) {
     app.config(['$locationProvider', '$stateProvider',
         function($locationProvider, $stateProvider) {
             $locationProvider.html5Mode(true);

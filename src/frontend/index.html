@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./css/app.min.css">
 </head>
 <body>
-  <a ui-sref="home">homepage</a>
+  <a ui-sref="home" ui-sref-opts="{reload: true}">homepage</a>
   <div ui-view></div>
   <script data-main="./main" src="./lib/requirejs/require.js"></script>
 </body>
