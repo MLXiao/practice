@@ -6,10 +6,21 @@ define(['app'], function(app) {
           var param = $.param(param);
           if (param) url += '?' + param;
         }
-        return $http.get(url);
+        return $http({
+          method: 'GET',
+          url: url
+        });
       },
       post: function(url, param, contentType) {
-        return;
+        if (!contentType) contentType = 'application/json';
+        return $http({
+          method: 'POST',
+          url: url,
+          headers: {
+            'Content-Type': contentType,
+          },
+          data: param
+        });
       }
     };
   }])

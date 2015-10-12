@@ -7,9 +7,9 @@ define(['app'], function(app) {
 
     console.log($.param({a: 1, b: 2}));
 
-    httpService.get('/api/test/get', {a: 1, b: 2})
-    	.success(function(data) {
-    		console.log(data)
-    	})
+    httpService.post('/api/test/get', {a: 1, b: 2})
+      .success(function(data) {
+        console.log(data);
+      })
   }]);
 });

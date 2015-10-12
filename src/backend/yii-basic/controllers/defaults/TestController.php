@@ -18,7 +18,6 @@ class TestController extends Controller
         echo __DIR__ . '<br>';
         echo __FILE__ . '<br>';
         echo Yii::$app->basePath;
-
     }
 
     public function actionMongo()
