@@ -23,16 +23,20 @@ class TestController extends Controller
 
     public function actionMongo()
     {
-        $collection = Yii::$app->mongodb->getCollection('user');
-        // print_r(User::getDb());
+
     }
 
-    public function actionUser()
+    public function actionGet()
     {
-        $request = Yii::$app->request;
-        $user = new User();
-        $data = $request->post();
-        $user->attributes = $data;
-        $user->save();
+        return [
+            'a' => 1,
+            'b' => 2,
+            'c' => 3
+        ];
+    }
+
+    public function actionPost()
+    {
+        return Yii::$app->request->post();
     }
 }

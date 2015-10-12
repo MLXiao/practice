@@ -1,3 +1,9 @@
 <div>
-{{'abc' | myFilter: ' haha'}}
+	{{now | date : dataFormat}}
+  <br>
+  <div ng-init="a=true">
+    <!-- <font ng-class="{true: 'red', false: 'green'}[a]">hello</font> -->
+    <button ng-click="a=false" class="btn" ng-class="{true: 'btn-info', false: 'btn-danger'}[a]">Click</button>
+    <div mt-pagination></div>
+  </div>
 </div>

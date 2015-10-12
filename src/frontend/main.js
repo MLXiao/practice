@@ -11,7 +11,7 @@ require.config({
 	},
 	deps: ['bootstrap'],
 	shim: {
-		'bootstrap': ['angular', 'angular-ui-router'],
+		'bootstrap': ['jquery', 'angular', 'angular-ui-router'],
 		'bootstrap-js': ['jquery'],
 		'angular': ['jquery'],
 		'angular-ui-router': ['angular'],
