@@ -1,9 +1,9 @@
 <div>
 	{{now | date : dataFormat}}
   <br>
-  <div ng-init="a=true">
+  <div ng-init="btnClk=false">
     <!-- <font ng-class="{true: 'red', false: 'green'}[a]">hello</font> -->
-    <button ng-click="a=false" class="btn" ng-class="{true: 'btn-info', false: 'btn-danger'}[a]">Click</button>
+    <button ng-click="btn_click()" class="btn" ng-class="{true: 'btn-info', false: 'btn-danger'}[btnClk]">Click</button>
     <div mt-pagination></div>
   </div>
 </div>
