@@ -1,3 +1,3 @@
 define([
-	'directive/pagination'
+	'directive/finishRender'
 ], function() {});

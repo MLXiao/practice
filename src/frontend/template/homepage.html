@@ -4,6 +4,12 @@
   <div ng-init="btnClk=false">
     <!-- <font ng-class="{true: 'red', false: 'green'}[a]">hello</font> -->
     <button ng-click="btn_click()" class="btn" ng-class="{true: 'btn-info', false: 'btn-danger'}[btnClk]">Click</button>
+    <ul ng-repeat="value in [1, 2, 3, 4, 5]" mt-finish-render>
+    	<li>{{value}}</li>
+    </ul>
+    <ul ng-repeat="value in [1, 2, 3, 4, 5]" mt-finish-render>
+    	<li>{{value}}</li>
+    </ul>
     <div mt-pagination></div>
   </div>
 </div>

@@ -1,16 +1,21 @@
 define(['app'], function(app) {
 
-  app.controller('homepageController', ['$q', '$rootScope', '$scope', '$filter', '$http', 'utilService', 'httpService', function($q, $rootScope, $scope, $filter, $http, utilService, httpService){
+  app.controller('homepageController', ['$timeout', '$q', '$rootScope', '$scope', '$filter', '$http', 'utilService', 'httpService',
+    function($timeout, $q, $rootScope, $scope, $filter, $http, utilService, httpService){
 
     $scope.now = (new Date()).getTime();
     $scope.dataFormat = 'yyyy-MM-dd HH:mm:ss';
+
+    // $scope.$evalAsync(function($scope) {
+    //   console.log($('li'));
+    // })
 
     $scope.btn_click = function() {
       $scope.btnClk = !$scope.btnClk;
       $scope.$emit('btnClk', 'haha');
     }
     $rootScope.$on('btnClk', function(){
-      console.log(arguments);
+      // console.log($scope);
     });
 
     // function asyncGreet(name) {
