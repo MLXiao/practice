@@ -28,9 +28,9 @@ class TestController extends Controller
     public function actionGet()
     {
         return [
-            'a' => 3,
-            'b' => 4,
-            'c' => 5
+            'a' => 6,
+            'b' => 7,
+            'c' => 8
         ];
         // return 'abcdefg';
     }

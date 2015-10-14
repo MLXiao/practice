@@ -16,8 +16,8 @@ define(['app'], function(app) {
       $translate.use('zh-cn');
     }
     $rootScope.$on('btnClk', function(){
-      // console.log($scope);
-      console.log($cacheFactory);
+      console.log($cacheFactory.get('myCache'));
+      console.log($cacheFactory.get('myCache').get('/api/test/get'));
     });
 
     // function asyncGreet(name) {
@@ -55,11 +55,11 @@ define(['app'], function(app) {
     //     console.log(data);
     //   })
 
+    var myCache = $cacheFactory('myCache');
     $http({
       method: 'GET',
       url: '/api/test/get',
-      cache: true,
-      params: {}
+      cache: myCache,
     }).success(function(data) {
       console.log(data);
     });

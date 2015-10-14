@@ -3,7 +3,7 @@ define(['app'], function(app) {
     return {
       restrict: 'A',
       link: function($scope, iElm, iAttrs, controller) {
-        console.log($scope.$last);
+        // console.log($scope.$last);
       }
     };
   }]);
