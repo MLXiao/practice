@@ -8,14 +8,16 @@ require.config({
 		'angular-ui-router': '../lib/angular-ui-router/release/angular-ui-router.min',
 		'angular-translate': '../lib/angular-translate/angular-translate.min',
 		'angular-couch-potato': '../lib/angular-couch-potato/dist/angular-couch-potato',
+		'angular-translate-loader-static-files': '../lib/angular-translate-loader-static-files/angular-translate-loader-static-files',
 	},
 	deps: ['bootstrap'],
 	shim: {
-		'bootstrap': ['jquery', 'angular', 'angular-ui-router'],
+		'bootstrap': ['jquery', 'angular', 'angular-ui-router', 'angular-translate', 'angular-translate-loader-static-files'],
 		'bootstrap-js': ['jquery'],
 		'angular': ['jquery'],
 		'angular-ui-router': ['angular'],
 		'angular-translate': ['angular'],
 		'angular-couch-potato': ['angular'],
+		'angular-translate-loader-static-files': ['angular', 'angular-translate'],
 	},
 });

@@ -1,7 +1,7 @@
 define(['app'], function(app) {
 
-  app.controller('homepageController', ['$timeout', '$q', '$rootScope', '$scope', '$filter', '$http', 'utilService', 'httpService',
-    function($timeout, $q, $rootScope, $scope, $filter, $http, utilService, httpService){
+  app.controller('homepageController', ['$cacheFactory', '$timeout', '$q', '$rootScope', '$scope', '$filter', '$http', 'utilService', 'httpService', '$translate',
+    function($cacheFactory, $timeout, $q, $rootScope, $scope, $filter, $http, utilService, httpService, $translate){
 
     $scope.now = (new Date()).getTime();
     $scope.dataFormat = 'yyyy-MM-dd HH:mm:ss';
@@ -13,9 +13,11 @@ define(['app'], function(app) {
     $scope.btn_click = function() {
       $scope.btnClk = !$scope.btnClk;
       $scope.$emit('btnClk', 'haha');
+      $translate.use('zh-cn');
     }
     $rootScope.$on('btnClk', function(){
       // console.log($scope);
+      console.log($cacheFactory);
     });
 
     // function asyncGreet(name) {
@@ -53,13 +55,14 @@ define(['app'], function(app) {
     //     console.log(data);
     //   })
 
-    // $http({
-    //   method: 'GET',
-    //   url: '/api/test/get',
-    //   params: {}
-    // }).success(function(data) {
-    //   console.log(data);
-    // });
+    $http({
+      method: 'GET',
+      url: '/api/test/get',
+      cache: true,
+      params: {}
+    }).success(function(data) {
+      console.log(data);
+    });
 
   // $http.jsonp('http://localhost:931/test/get?callback=JSON_CALLBACK').success(function(response) {
   //   console.log('haha');

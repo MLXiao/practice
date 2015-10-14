@@ -1,5 +1,4 @@
 define([], function() {
-    var app = angular.module('app', ['ui.router']);
-    // console.log(angular.module('ui.router'));
+    var app = angular.module('app', ['ui.router', 'pascalprecht.translate']);
     return app;
 });

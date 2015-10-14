@@ -1,6 +1,28 @@
 define(['app', 'service/services', 'directive/directives', 'controller/controllers'], function(app) {
-  app.config(['$locationProvider', '$stateProvider', '$httpProvider',
-    function($locationProvider, $stateProvider, $httpProvider) {
+  app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpProvider', '$translateProvider',
+    function($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider, $translateProvider) {
+
+      $locationProvider.html5Mode(true);
+
+      $urlRouterProvider.when('/', '/home');
+
+      $stateProvider.state('home', {
+        url: '/home',
+        templateUrl: 'template/homepage.html',
+        controller: 'homepageController',
+      }).state('login', {
+        url: '/login',
+        templateUrl: 'template/login.html',
+        controller: 'loginController',
+      });
+
+
+      $translateProvider.useStaticFilesLoader({
+        prefix: '/i18n/',
+        suffix: '.json'
+      });
+
+      $translateProvider.preferredLanguage('en-us');
 
       $httpProvider.interceptors.push(function($q) {
         return {
@@ -31,16 +53,6 @@ define(['app', 'service/services', 'directive/directives', 'controller/controlle
         };
       });
 
-      $locationProvider.html5Mode(true);
-      $stateProvider.state('home', {
-        url: '/home',
-        templateUrl: 'template/homepage.html',
-        controller: 'homepageController',
-      }).state('login', {
-        url: '/login',
-        templateUrl: 'template/login.html',
-        controller: 'loginController',
-      });
     }
   ]).run([
     function() {

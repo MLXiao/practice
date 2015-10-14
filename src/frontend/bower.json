@@ -8,6 +8,7 @@
 		"angular-ui-router": "*",
 		"angular-couch-potato": "*",
 		"angular-translate": "*",
+		"angular-translate-loader-static-files": "*",
 		"ng-file-upload": "*",
 		"react": "*",
 		"blueimp-md5": "*",
