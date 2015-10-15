@@ -3,8 +3,7 @@
   <br>
   {{now | date : dataFormat}}
   <br>
-  <div ng-init="btnClk=false">
-    <!-- <font ng-class="{true: 'red', false: 'green'}[a]">hello</font> -->
+  <!-- <div ng-init="btnClk=false">
     <button ng-click="btn_click()" class="btn" ng-class="{true: 'btn-info', false: 'btn-danger'}[btnClk]">Click</button>
     <ul ng-repeat="value in [1, 2, 3, 4, 5]" mt-finish-render>
       <li>{{value}}</li>
@@ -13,5 +12,25 @@
       <li>{{value}}</li>
     </ul>
     <div mt-pagination></div>
+  </div> -->
+  <div id="div1" style="float:left; width: 200px; height: 160px; border: 1px solid #52e6eb" ondragover="div_dragover()" ondrop="div_drop(event)">
+
+  </div>
+  <div class="clear-fix" id="div2" style="float:left; width: 200px; height: 160px; border: 1px solid #717ae9" ondragover="div_dragover()" ondrop="div_drop(event)">
+    <button id='btn' class="btn btn-info" draggable="true" ondragstart="btn_dragstart(event)">drag me</button>
   </div>
 </div>
+
+<script>
+  btn_dragstart = function(event) {
+    event.dataTransfer.setData("abc",event.target.id);
+  }
+  div_dragover = function() {
+    event.preventDefault();
+  }
+  div_drop = function(event) {
+    event.preventDefault();
+    var data=event.dataTransfer.getData("abc");
+    event.target.appendChild(document.getElementById(data));
+  }
+</script>

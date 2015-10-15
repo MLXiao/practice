@@ -27,12 +27,12 @@ class TestController extends Controller
 
     public function actionGet()
     {
+        Yii::getLogger()->log('abc', 2);
         return [
             'a' => 6,
             'b' => 7,
-            'c' => 8
+            'c' => 8,
         ];
-        // return 'abcdefg';
     }
 
     public function actionPost()
