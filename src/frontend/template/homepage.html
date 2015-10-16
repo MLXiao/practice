@@ -13,24 +13,46 @@
     </ul>
     <div mt-pagination></div>
   </div> -->
-  <div id="div1" style="float:left; width: 200px; height: 160px; border: 1px solid #52e6eb" ondragover="div_dragover()" ondrop="div_drop(event)">
+
+  <!-- <div id="div1" style="float:left; width: 200px; height: 160px; border: 1px solid #52e6eb" ondragover="div_dragover()" ondrop="div_drop(event)">
 
   </div>
   <div class="clear-fix" id="div2" style="float:left; width: 200px; height: 160px; border: 1px solid #717ae9" ondragover="div_dragover()" ondrop="div_drop(event)">
     <button id='btn' class="btn btn-info" draggable="true" ondragstart="btn_dragstart(event)">drag me</button>
   </div>
+  <div id="div3" style="float:left; width: 200px; height: 160px; border: 1px solid #c267d3" ondragover="div_dragover()" ondrop="div_drop(event)">
+
+  </div> -->
+
+  <!-- <svg height="190">
+    <polygon points="100,10 40,180 190,60 10,60 160,180"
+    style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+  </svg -->
+
+  <div style="margin-left: 30%; float:left; width: 300px; height: 240px; background-color: #52e6eb">
+
+  </div>
+
 </div>
 
 <script>
-  btn_dragstart = function(event) {
-    event.dataTransfer.setData("abc",event.target.id);
-  }
-  div_dragover = function() {
-    event.preventDefault();
-  }
-  div_drop = function(event) {
-    event.preventDefault();
-    var data=event.dataTransfer.getData("abc");
-    event.target.appendChild(document.getElementById(data));
-  }
+
+  // var source = new EventSource("/api/hello.php");
+  // source.onmessage=function(event) {
+  //   console.log('haha ');
+  //   console.log(event.data)
+  // };
+
+  // console.log(cxt);
+  // btn_dragstart = function(event) {
+  //   event.dataTransfer.setData("abc",event.target.id);
+  // }
+  // div_dragover = function() {
+  //   event.preventDefault();
+  // }
+  // div_drop = function(event) {
+  //   event.preventDefault();
+  //   var data=event.dataTransfer.getData("abc");
+  //   event.target.appendChild(document.getElementById(data));
+  // }
 </script>

@@ -12,7 +12,7 @@ class TestController extends Controller
 {
     public function actionDir()
     {
-        Yii::$app->response->format = 'html';
+        Yii::$app->response->format = Yii::$app->response->FORMAT_HTML;
         echo Yii::getAlias('@yii') . '<br>';
         echo Yii::getAlias('@app') . '<br>';
         echo __DIR__ . '<br>';
@@ -38,5 +38,9 @@ class TestController extends Controller
     public function actionPost()
     {
         return Yii::$app->request->post();
+    }
+
+    public function actionSSE()
+    {
     }
 }

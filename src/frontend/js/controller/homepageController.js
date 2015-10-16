@@ -10,15 +10,15 @@ define(['app'], function(app) {
     //   console.log($('li'));
     // })
 
-    $scope.btn_click = function() {
-      $scope.btnClk = !$scope.btnClk;
-      $scope.$emit('btnClk', 'haha');
-      $translate.use('zh-cn');
-    }
-    $rootScope.$on('btnClk', function(){
-      console.log($cacheFactory.get('myCache'));
-      console.log($cacheFactory.get('myCache').get('/api/test/get'));
-    });
+    // $scope.btn_click = function() {
+    //   $scope.btnClk = !$scope.btnClk;
+    //   $scope.$emit('btnClk', 'haha');
+    //   $translate.use('zh-cn');
+    // }
+    // $rootScope.$on('btnClk', function(){
+    //   console.log($cacheFactory.get('myCache'));
+    //   console.log($cacheFactory.get('myCache').get('/api/test/get'));
+    // });
 
     // function asyncGreet(name) {
     //   var deferred = $q.defer();
@@ -55,14 +55,15 @@ define(['app'], function(app) {
     //     console.log(data);
     //   })
 
-    var myCache = $cacheFactory('myCache');
-    $http({
-      method: 'GET',
-      url: '/api/test/get',
-      cache: myCache,
-    }).success(function(data) {
-      console.log(data);
-    });
+    // var myCache = $cacheFactory('myCache');
+    // $http({
+    //   method: 'GET',
+    //   url: '/api/test/get',
+    //   cache: myCache,
+    // }).success(function(data) {
+    //   console.log('haha');
+    //   console.log(data);
+    // });
 
   // $http.jsonp('http://localhost:931/test/get?callback=JSON_CALLBACK').success(function(response) {
   //   console.log('haha');
